@@ -1,0 +1,17 @@
+<div class="login">
+    <div>
+        <p>Track Bus</p>
+        <form class="login__form" [formGroup]="formdata">
+            <div class="login__form-inputs">
+                <label for="routeNumber">Select Route :</label>
+                <select style="width: 177px" name="routeNumber" formControlName="routeNumber">
+                    <option value="" selected disabled hidden>Select Route</option>
+                    <option *ngFor="let routeNumber of routeNumberList" value="routeNumber">{{routeNumber}}</option>
+                  </select>
+            </div>
+            <div class="login__form-inputs submit">
+                <input type="submit" (click)="track()" class="forsubmit" value="Track">
+            </div>
+        </form>
+    </div>
+</div>
