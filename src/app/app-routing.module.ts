@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AdminBusrouteComponent } from './admin/admin-busroute/admin-busroute.component';
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { AdminLoginComponent } from './admin/admin-login/admin-login.component';
+import { AdminTrackingComponent } from './admin/admin-tracking/admin-tracking.component';
 import { AdminUsersComponent } from './admin/admin-users/admin-users.component';
 import { AdminComponent } from './admin/admin.component';
 import { DriverHomeComponent } from './driver/driver-home/driver-home.component';
@@ -27,6 +28,7 @@ const routes: Routes = [
     { path: 'home', component: AdminHomeComponent },
     { path: 'user', component: AdminUsersComponent },
     { path: 'bus-route', component: AdminBusrouteComponent },
+    { path: 'bus-tracking', component: AdminTrackingComponent }
   ]},
   { path: 'driver', component: DriverComponent, children: [
     { path: 'login', component: DriverLoginComponent },

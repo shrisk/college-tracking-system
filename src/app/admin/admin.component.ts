@@ -22,4 +22,8 @@ export class AdminComponent implements OnInit {
     });
   }
 
+  logout() {
+    this.router.navigateByUrl('/admin/login');
+  }
+
 }

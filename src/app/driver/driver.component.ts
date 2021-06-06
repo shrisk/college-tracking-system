@@ -20,4 +20,8 @@ export class DriverComponent implements OnInit {
       this.isHome = res;
     });
   }
+
+  logout() {
+    this.router.navigateByUrl('/driver/login');
+  }
 }

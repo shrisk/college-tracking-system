@@ -5,11 +5,11 @@ import { BusRoute } from 'src/app/BusRoute';
 import { UtilService } from 'src/app/util.service';
 
 @Component({
-  selector: 'app-user-bus-tracking',
-  templateUrl: './user-bus-tracking.component.html',
-  styleUrls: ['./user-bus-tracking.component.scss']
+  selector: 'app-admin-tracking',
+  templateUrl: './admin-tracking.component.html',
+  styleUrls: ['./admin-tracking.component.scss']
 })
-export class UserBusTrackingComponent implements OnInit {
+export class AdminTrackingComponent implements OnInit {
   formdata!: FormGroup;
   busRoute!: BusRoute;
   isTracking: boolean = false;

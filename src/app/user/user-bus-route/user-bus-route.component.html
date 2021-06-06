@@ -9,11 +9,11 @@
                 <th>Destination</th>
                 <th>View Map</th>
             </tr>
-            <tr>
-                <td>5</td>
-                <td>Sam Anderson</td>
-                <td>Philadelphia</td>
-                <td>New York</td>
+            <tr *ngFor="let busRoute of busRoutes">
+                <td>{{busRoute.routeNo}}</td>
+                <td>{{busRoute.busNo}}</td>
+                <td>{{busRoute.source}}</td>
+                <td>{{busRoute.destination}}</td>
                 <td>View Map</td>
             </tr>
         </table>

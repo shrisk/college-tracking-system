@@ -12,25 +12,15 @@
                 <th>Activate</th>
                 <th>De-Activate</th>
             </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-                <td (click)="setUserActivate(true)">Francisco Chang</td>
-                <td (click)="setUserActivate(false)">Mexico</td>
-            </tr>
-            <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
+            <tr *ngFor="let user of userList">
+                <td>{{user.name}}</td>
+                <td>{{user.emailAddress}}</td>
+                <td>{{user.gender}}</td>
+                <td>{{user.address}}</td>
+                <td>{{user.mobileNumber}}</td>
+                <td>{{user.active ? 'Activated' : 'Waiting'}}</td>
+                <td (click)="setUserActivate(user, true)">Activate</td>
+                <td (click)="setUserActivate(user, false)">De-Activate</td>
             </tr>
         </table>
     </div>

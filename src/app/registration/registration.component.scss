@@ -17,6 +17,12 @@
     }
     &__menu {
         margin-left: 100px;
+        line-height: 30px;
+    }
+    li {
+        color: yellow;
+        cursor: pointer;
+        text-decoration: underline;
     }
 }
 

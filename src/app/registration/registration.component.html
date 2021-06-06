@@ -20,9 +20,9 @@
             </div>
             <div class="register__form-inputs">
                 <label for="gender">Gender :</label>
-                <select style="width: 177px" name="cars" formControlName="gender">
+                <select style="width: 177px" name="gender" formControlName="gender">
                     <option value="" selected disabled hidden>Select Gender</option>
-                    <option *ngFor="let gender of genderList" value="gender.value">{{gender.viewValue}}</option>
+                    <option *ngFor="let gender of genderList" [value]="gender.value">{{gender.viewValue}}</option>
                   </select>
             </div>
             <div class="register__form-inputs">

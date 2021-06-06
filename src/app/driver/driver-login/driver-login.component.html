@@ -6,7 +6,7 @@
                 <label for="routeNumber">Route Number :</label>
                 <select style="width: 177px" name="cars" formControlName="routeNumber">
                     <option value="" selected disabled hidden>Select Route</option>
-                    <option *ngFor="let routeNumber of routeNumberList" value="routeNumber">{{routeNumber}}</option>
+                    <option *ngFor="let routeNumber of routeNumberList" [value]="routeNumber">{{routeNumber}}</option>
                   </select>
             </div>
             <div class="login__form-inputs">

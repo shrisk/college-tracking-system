@@ -25,11 +25,15 @@ export class AdminLoginComponent implements OnInit {
 
    login() {
       if (this.formdata.valid) {
-         alert("User logged in successfully !!!");
-         this.service.isHome.next(false);
-         this.router.navigateByUrl('/admin/home');
+         if (this.formdata.value.userName === 'admin' && this.formdata.value.passwd === 'admin') {
+            alert("User logged in successfully !!!");
+            this.service.isHome.next(false);
+            this.router.navigateByUrl('/admin/home');
+         } else {
+            alert("Invalid credentails !!!");
+         } 
       } else {
-         alert("Invalid credentails !!!");
+         alert("Enter credentails !!!");
       }
    }
 

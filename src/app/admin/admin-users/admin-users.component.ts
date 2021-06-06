@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AppService } from 'src/app/app.service';
+import { User } from 'src/app/User';
 
 @Component({
   selector: 'app-admin-users',
@@ -6,15 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./admin-users.component.scss']
 })
 export class AdminUsersComponent implements OnInit {
-
-  constructor() { }
+  userList: any[] = [];
+  constructor(private appService: AppService) { }
 
   ngOnInit(): void {
+    this.appService.getUsers().subscribe(res => {
+      this.userList = res;
+    });
   }
 
-  setUserActivate(isActivate: boolean) {
-    const msg = isActivate ? 'activated' : 'deactivated';
-    alert('User is ' + msg + ' successfully !!!' );
+  setUserActivate(user: any, isActivate: boolean) {
+    user.active = isActivate;
+    this.appService.updateUser(user).subscribe(res => {
+      user = res;
+    });
   }
+
+
 
 }

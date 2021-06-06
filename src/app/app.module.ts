@@ -25,6 +25,9 @@ import { UserHomeComponent } from './user/user-home/user-home.component';
 import { UserProfileComponent } from './user/user-profile/user-profile.component';
 import { UserBusRouteComponent } from './user/user-bus-route/user-bus-route.component';
 import { UserBusTrackingComponent } from './user/user-bus-tracking/user-bus-tracking.component';
+import { AppService } from './app.service';
+import { HttpClientModule } from '@angular/common/http';
+import { AdminTrackingComponent } from './admin/admin-tracking/admin-tracking.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +49,8 @@ import { UserBusTrackingComponent } from './user/user-bus-tracking/user-bus-trac
     UserHomeComponent,
     UserProfileComponent,
     UserBusRouteComponent,
-    UserBusTrackingComponent
+    UserBusTrackingComponent,
+    AdminTrackingComponent
   ],
   imports: [
     BrowserModule,
@@ -54,8 +58,9 @@ import { UserBusTrackingComponent } from './user/user-bus-tracking/user-bus-trac
     AppRoutingModule,
     ReactiveFormsModule,
     MaterialModule,
+    HttpClientModule
   ],
-  providers: [UtilService],
+  providers: [UtilService, AppService],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [AppComponent]
 })
