@@ -13,11 +13,12 @@ export class UserBusTrackingComponent implements OnInit {
   formdata!: FormGroup;
   busRoute!: BusRoute;
   isTracking: boolean = false;
-  routeNumberList: any[] = [5, 2, 3, 6];
+  routeNumberList!: any[];
   constructor(private service: UtilService,
     private appService: AppService) { }
 
   ngOnInit(): void {
+    this.setBusRoutes();
     this.formdata = new FormGroup({
       routeNumber: new FormControl("", Validators.required),
     });
@@ -37,5 +38,13 @@ export class UserBusTrackingComponent implements OnInit {
       alert("Select Bus Route !!!");
     }
   }
+
+  setBusRoutes() {
+    this.appService.getBusRoutes().subscribe(res => {
+       if (res.length > 0) {
+          this.routeNumberList = res.map((r: { routeNo: any; }) => r.routeNo);
+       }
+    })
+ }
 
 }

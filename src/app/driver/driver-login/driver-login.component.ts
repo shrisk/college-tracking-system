@@ -11,7 +11,7 @@ import { UtilService } from 'src/app/util.service';
 })
 export class DriverLoginComponent implements OnInit {
    formdata!: FormGroup;
-   routeNumberList: any[] = [5, 2, 3, 6];
+   routeNumberList!: any[];
    constructor(
       private service: UtilService,
       private router: Router,
@@ -20,6 +20,7 @@ export class DriverLoginComponent implements OnInit {
 
    ngOnInit() {
       this.service.isHome.next(true);
+      this.setBusRoutes();
       this.formdata = new FormGroup({
          driverName: new FormControl("", Validators.required),
          routeNumber: new FormControl("", Validators.required),
@@ -42,6 +43,14 @@ export class DriverLoginComponent implements OnInit {
       } else {
          alert("Enter credentails !!!");
       }
+   }
+
+   setBusRoutes() {
+      this.appService.getBusRoutes().subscribe(res => {
+         if (res.length > 0) {
+            this.routeNumberList = res.map((r: { routeNo: any; }) => r.routeNo);
+         }
+      })
    }
 
 }
